@@ -1,20 +1,34 @@
+let message = document.querySelector('#text');
+let offset = document.querySelector('#choice');
+let cipheredText = document.querySelector('#cipheredtext');
+let output = "";
+
 window.cipher = {
-  // ... 
-};
+    encode : (message, offset) => {
+      for (let i = 0; i < message.length; i++) {
+        let result = message[i];
+        let code = message.charCodeAt(i);
+        result = String.fromCharCode((code - 65 + offset) % 26 + 65);
+        output += result;
+        cipheredText.innerHTML = output;
+      }
+    },
+     
+    decode : (message, offset) => {
+      for (let i = 0; i < message.length; i++) {
+        let result = message[i];
+        let code = message.charCodeAt(i);
+        
+        result = String.fromCharCode((code - 65 - offset) % 26 + 65);
 
-const encode = (message, offset) => {
-  let output = "";
-/*Como se que esta poniendo cada caracter?,*/
-  for (let i = 0; i < message.length; i++) {
-    let result = message[i];
-    let code = message.charCodeAt(i);
-    if (code >= 65 && code <= 90)
-      result = String.fromCharCode((code - 65 + offset) % 26 + 65);
+      output += result;
+    }
 
-    output += result;
+    return output;
   }
+  
 
-  return output;
+  
 };
 
 
