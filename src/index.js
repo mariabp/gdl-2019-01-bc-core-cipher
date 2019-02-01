@@ -1,8 +1,7 @@
-function checkMessage() {
-    if (message.value.length < 1) {
-      message.placeholder = "¡Por favor escribe un mensaje más largo!";
-    } else {
-    
-      cipher.encode(message, offset);
-    }
-}
+let string = document.querySelector('#text');
+let offset = document.querySelector('#choice');
+let cipherSubmit = document.querySelector('#ciphersubmit');
+let cipheredText = document.querySelector('#cipheredtext');
+
+cipherSubmit.addEventListener('onclick', cipher.encode());
+decipherSubmit.addEventListener('onclick', cipher.decode());
