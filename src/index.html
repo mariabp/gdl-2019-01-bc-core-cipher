@@ -1,34 +1,38 @@
 <!DOCTYPE html>
+
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caesar Cipher</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="container">
 
-      <div id="header">
-        Selecciona un número para elegir el tipo de cifrado.
-      </div>
+	<head>
 
-      <input id="text" type="text" placeholder="Escribe aquí lo que quieras codificar...">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Caesar Cipher</title>
+		<link rel="stylesheet" href="style.css" />
 
-      <input id="choice" type="number" value="0" min="1" max="26" step="1">
+	</head>
 
-      <div id="cipheredtext">
-        Aquí aparecerá tu resultado...
-      </div>
+	<body>
 
-      <div id="buttons">
-        <button id="reset" type="reset" value="reset">Reset</button>
-        <button id="ciphersubmit" class="action" type="button">Cifrar</button>
-        <button id="deciphersubmit" class="action" type="button">Descifrar</button>
-      </div>
+		<div id="container">
 
-      <script src="cipher.js"></script>
-      <script src="index.js"></script>
-    </div>
-  </body>
+			<div id="header">Número de caracteres a desplazar:</div>
+
+			<input id="text" type="text" placeholder="Escribe aquí lo que quieras cifrar o descifrar...">
+			<input id="choice" type="number" value="1" min="1" max="25" step="1">
+
+			<div id="cipheredtext">Aquí aparecerá tu resultado...</div>
+
+			<div id="reset">Reset</div>
+			<div id="ciphersubmit">Cifrar</div>
+			<div id="deciphersubmit">Descifrar</div>
+
+			<div id="footer">Maria Bolaños / Cipher / Laboratoria GDL-002</div>
+
+			<script src="cipher.js"></script>
+			<script src="index.js"></script>
+
+		</div>
+
+	</body>
+
 </html>
