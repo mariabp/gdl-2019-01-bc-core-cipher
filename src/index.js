@@ -4,11 +4,14 @@ let cipherSubmit = document.querySelector('#ciphersubmit');
 let decipherSubmit = document.querySelector('#deciphersubmit');
 let resetButton = document.querySelector('#reset');
 
-let string = document.querySelector('#text');
-let offset = document.querySelector('#choice');
+let stringId = document.querySelector('#text');
+let offsetId = document.querySelector('#choice');
+
+let offset = document.getElementById('choice').value;
+let string = document.getElementById('text').value;
+
 let cipheredText = document.querySelector('#cipheredtext');
 
-//botones
 cipherSubmit.addEventListener('click', validateFormCipher);
 decipherSubmit.addEventListener('click', validateFormDecipher);
 resetButton.addEventListener('click', resetForm);
@@ -16,33 +19,33 @@ resetButton.addEventListener('click', resetForm);
 function validateFormCipher() {
 	validateFormText();
 	if (validateFormText() === true) {
-		cipher.encode();
+		cipheredText.innerHTML = cipher.encode(offset, string);
 	}
 }
 
 function validateFormDecipher() {
 	validateFormText();
 	if (validateFormText() === true) {
-		cipher.decode();
+		cipheredText.innerHTML = cipher.decode(offset, string);
 	}
 }
 
 function validateFormText() {
-	if (string.value.length < 1) {	
-		string.placeholder = "¡Es necesario que escribas algo!";
-		string.style.backgroundColor = "rgb(248, 126, 126)";
-		string.value = "";
+	if (stringId.value.length < 1) {	
+		stringId.placeholder = "¡Es necesario que escribas algo!";
+		stringId.style.backgroundColor = "rgb(248, 126, 126)";
+		stringId.value = "";
 	} else {
-		string.style.backgroundColor = "rgba(121, 116, 185, 1)";
+		stringId.style.backgroundColor = "rgba(121, 116, 185, 1)";
 		return true;
 	}
 }
 
 function resetForm() {
-	offset.value = "1";
-	string.value = "";
-	string.placeholder = "Escribe aquí lo que quieras cifrar o descifrar...";
+	offsetId.value = 1;
+	stringId.value = "";
+	stringId.placeholder = "Escribe aquí lo que quieras cifrar o descifrar...";
 	cipheredText.innerHTML = "Aquí aparecerá tu resultado...";
-	string.style.backgroundColor = "rgba(121, 116, 185, 1)";
-	offset.style.backgroundColor = "rgba(121, 116, 185, 1)";
+	stringId.style.backgroundColor = "rgba(121, 116, 185, 1)";
+	offsetId.style.backgroundColor = "rgba(121, 116, 185, 1)";
 }
