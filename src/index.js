@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 let cipherSubmit = document.querySelector('#ciphersubmit'); // -->Llamo al elemento del botón CIFRAR en el HTML
 let decipherSubmit = document.querySelector('#deciphersubmit');// -->Llamo al elemento del botón DESCIFRAR en el HTML
@@ -23,7 +23,7 @@ resetButton.addEventListener('click', resetForm);// --> Botón Reset
 function validateFormCipher() {
 	validateFormText();
 	if (validateFormText() === true) {
-		cipheredText.innerHTML = cipher.encode(offset, string);
+		cipheredText.innerHTML = cipher.encode(offset,string);
 	}
 }
 
@@ -63,7 +63,6 @@ function validateFormText() {
 //al color inicial para que se vea como recién cargada;
 //Cambia el color del background del elemento donde el usuario selecciona el desplazamiento, 
 //al color inicial para que se vea como recién cargada;
-
 function resetForm() {
 	offsetId.value = 1;
 	stringId.value = "";

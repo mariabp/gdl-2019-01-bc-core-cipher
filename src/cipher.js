@@ -2,7 +2,7 @@
 window.cipher = {
 	
 	encode : (offset, string) => {
-
+		
 		let cipheredLetter = '';
 
 		let cipheredPhrase = '';
@@ -18,6 +18,7 @@ window.cipher = {
 				cipheredLetter = String.fromCharCode((letterCode + Math.abs(parseInt(offset)) - 65) % 26 + 65);
 	
 				cipheredPhrase += cipheredLetter;
+				
 
 			} else if (letterCode >= 97 && letterCode <= 122) {
 

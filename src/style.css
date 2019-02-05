@@ -1,30 +1,34 @@
-@import url('https://fonts.googleapis.com/css?family=Work+Sans:200');
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:200'); 			/*Tipo de letra importada de Google Fonts */
 
+/* Estilo predeterminado para todos los elementos */ 
 * {
-	box-sizing: border-box;
-	color: rgb(255, 255, 255);
-	font-family: 'Work Sans', sans-serif;
-	font-size: 16pt;
-	font-weight: 300;
+	box-sizing: border-box;														/* Incluye padding y margin en el total de medida height y width */
+	color: rgb(255, 255, 255);				  								  /* Color blanco de letra */
+	font-family: 'Work Sans', sans-serif;										/* Tipo de letra */
+	font-size: 16pt;															/* Tamaño de letra */
+	font-weight: 300;															/* Grosor letra */
 }
 
+
+/* Estilo predeterminado para elemento body */
 body {
-	height: 100%;
-	width: 100%;
-	padding: 0;
-	margin: 0;
-	background-color: rgb(76, 72, 128);
+	height: 100%;																/* Alto al 100 del tamaño de pantalla */
+	width: 100%;																/* Ancho al 100 del tamaño de pantalla */
+	padding: 0;																	/* Padding */
+	margin: 0;																	/* Margin */
+	background-color: rgb(76, 72, 128);			  							  /* Color de fondo morado */
 }
 
+/* Estilo para DIV container */
 #container {
-	display: grid;
-	height: 100vh;
-	width: 100vw;
-	overflow: auto;
-	grid-template-columns: 1fr 20vw 20vw 20vw 1fr;
-	grid-template-rows: 10vh 3rem 1rem auto 1rem 3rem 1rem auto 10vh 1fr 3rem;
-	grid-column-gap: 1rem;
-	grid-template-areas:
+	display: grid; 																/* Crear matriz */
+	height: 100vh;																/* Alto al 100 del tamaño de pantalla */
+	width: 100vw;																/* Ancho al 100 del tamaño de pantalla */
+	overflow: auto;																/* Acomoda el sobrante y pone flecha de desplazamiento */
+	grid-template-columns: 1fr 20vw 20vw 20vw 1fr;								/* Crea 5 columnas dentro de la matriz con el tamaño especificado*/
+	grid-template-rows: 10vh 3rem 1rem auto 1rem 3rem 1rem auto 10vh 1fr 3rem;	/* Crea 11 filas dentro de la matriz con el tamaño especificado*/
+	grid-column-gap: 1rem;														/* Espacio entre cada columna */
+	grid-template-areas:														/* Nombra cada area de la matriz igual al elemento HTML */
 		". . . . ."
 		". text text text ."
 		". . . . ."
@@ -38,81 +42,95 @@ body {
 		"footer footer footer footer footer";
 }
 
+/* Estilo para div header */
 #header {
-	grid-area: header;
-	display: flex;
-	padding: 1rem 0rem 1rem 1rem;
-	align-items: center;
-	justify-content: flex-end;
-	overflow-wrap: break-word;
-	font-weight: 600;
-	user-select: none;
+	grid-area: header;														/* Indica en que grid area aparece el elemento */
+	display: flex;															/* Tipo de display flex para mejor acomodo */
+	padding: 1rem 0rem 1rem 1rem;											/* Padding */
+	align-items: center;													/* Alinea los elementos al centro */
+	justify-content: flex-end;												/* Alinea el texto hasta arriba del elem*/
+	overflow-wrap: break-word;												/* Indica que si el texto no cabe en contenedor, corte palabras para empezar en otra línea */
+	font-weight: 600;														/* Grosor de la fuente */
+	user-select: none;														/* Impide que el usuario pueda seleccionar el texto */
 }
 
+/* Estilo para input donde usuario ingresa texto */
 #text {
-	grid-area: text;
-	display: block;
-	background-color: rgba(121, 116, 185, 1);
-	padding: 1rem;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	border: solid 1px; 
+	grid-area: text;														/*Indica en que grid area aparece el elemento */
+	display: block;															/* Tipo de display bloque */
+	background-color: rgba(121, 116, 185, 1);							  /* Color de fondo de la caja de texto */
+	padding: 1rem;															/* Padding */
+	overflow: hidden;														/* Indica que si el texto ingresado es mas grande que el espacio dado, se esconda */
+	text-overflow: ellipsis;												/* Agrega "..." cuando el texto no cabe en el elemento */
+	border: solid 1px; 														/* Estilo del borde */
 }
 
+/* Estilo para placeholder de text */
 #text::placeholder {
-	color: rgba(255, 255, 255, 1);   
+	color: rgba(255, 255, 255, 1);										  /* Color de texto blanco */
 }
 
+
+/* Estilo para selector de desplazamiento */
 #choice {
-	grid-area: choice;
-	display: block;
-	background-color: rgba(121, 116, 185, 1);
-	padding: 1rem;
-	text-align: center;
-	overflow-wrap: break-word;
-	border: solid 1px;
+	grid-area: choice;														/* Indica en que grid area aparece el elemento */
+	display: block;															/* Tipo de display bloque */
+	background-color: rgba(121, 116, 185, 1);							  /* Color de fondo de la caja de texto */
+	padding: 1rem;															/* Padding */
+	text-align: center;														/* Centra el texto en el elemento */
+	overflow-wrap: break-word;												/* Indica que si el texto no cabe en contenedor, corte palabras para empezar en otra línea */
+	border: solid 1px;														/* Estilo del borde */
 }
 
+/* Estilo para elemento donde aparece resultado */	
 #cipheredtext {
-	grid-area: cipheredtext;
-	display: block;
-	background-color: rgb(158, 154, 216);
-	padding: 1rem;
-	border: solid 1px;
-	overflow-wrap: break-word;
+	grid-area: cipheredtext;												/* Indica en que grid area aparece el elemento */
+	display: block;															/* Tipo de display bloque */
+	background-color: rgb(158, 154, 216);								  /* Color de fondo de la caja de texto */
+	padding: 1rem;															/* Padding */
+	border: solid 1px;														/* Estilo del borde */
+	overflow-wrap: break-word;												/* Indica que si el texto no cabe en contenedor, corte palabras para empezar en otra línea */
 }
-
+/* Botón Reset */
 #reset {
-	grid-area: reset;
-	background-color: rgb(127, 167, 204);
+	grid-area: reset;														/* Indica en que grid area aparece el elemento */
+	background-color: rgb(127, 167, 204);								  /* Color de fondo de la caja de texto */
 }
 
+/* Botón Cifrar */
 #ciphersubmit {
-	grid-area: ciphersubmit;
-	background-color: rgb(201, 127, 204);
+	grid-area: ciphersubmit;												/* Indica en que grid area aparece el elemento */
+	background-color: rgb(201, 127, 204);								  /* Color de fondo de la caja de texto */
 }
 
+/* Botón Descifrar */
 #deciphersubmit {
-	grid-area: deciphersubmit;
-	background-color: rgb(223, 178, 170);
+	grid-area: deciphersubmit;												/* Indica en que grid area aparece el elemento */
+	background-color: rgb(223, 178, 170);								  /* Color de fondo de la caja de texto */
 }
 
-#reset, #ciphersubmit, #deciphersubmit {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	overflow: hidden;
-	cursor: pointer;
-	border: solid 1px;
-	user-select: none;
+
+/* Estilo en común para botones */
+#reset, #ciphersubmit, #deciphersubmit {Ç
+	display: flex;															/* Tipo de display flex para mejor acomodo */
+	align-items: center;													/* Alinea los elementos al centro */
+	justify-content: center;												/* Justifica el texto centrandolo */
+	overflow: hidden;														/* Indica que si el texto es mas grande que el espacio dado, se esconda */
+	cursor: pointer;														/* Cambia el cursor a manita */
+	border: solid 1px;														/* Estilo del borde */
+	user-select: none;														/* Impide que el usuario pueda seleccionar el texto */
 }
 
+
+
+/* Estilo para elemento footer */
 #footer {
-	grid-area: footer;
-	display: flex;
-	background-color: rgb(102, 97, 175);
-	align-items: center;
-	justify-content: center;
-	padding: 1rem;
-	font-style: bold;
+	grid-area: footer;														/* Indica en que grid area aparece el elemento */
+	display: flex;															/* Tipo de display flex */
+	background-color: rgb(102, 97, 175);								  /* Color de fondo de la caja de texto */
+	align-items: center;													/* Alinea los elementos al centro */
+	justify-content: center;												/* Justifica el texto centrandolo */
+	padding: 1rem;															/* Padding */
+	font-style: bold;														/* Texto aparece en negritas */
 }
+
