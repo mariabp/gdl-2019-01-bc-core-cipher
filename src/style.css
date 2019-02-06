@@ -6,16 +6,15 @@
 	color: rgb(255, 255, 255);				  								  /* Color blanco de letra */
 	font-family: 'Work Sans', sans-serif;										/* Tipo de letra */
 	font-size: 16pt;															/* Tamaño de letra */
-	font-weight: 300;															/* Grosor letra */
+	font-weight: 600;															/* Grosor letra */
 }
-
 
 /* Estilo predeterminado para elemento body */
 body {
 	height: 100%;																/* Alto al 100 del tamaño de pantalla */
 	width: 100%;																/* Ancho al 100 del tamaño de pantalla */
-	padding: 0;																	/* Padding */
-	margin: 0;																	/* Margin */
+	padding: 0;																	/* Padding en cero para poder dar mejor formato */
+	margin: 0;																	/* Margin en cero para poder dar mejor formato*/
 	background-color: rgb(76, 72, 128);			  							  /* Color de fondo morado */
 }
 
@@ -24,15 +23,15 @@ body {
 	display: grid; 																/* Crear matriz */
 	height: 100vh;																/* Alto al 100 del tamaño de pantalla */
 	width: 100vw;																/* Ancho al 100 del tamaño de pantalla */
-	overflow: auto;																/* Acomoda el sobrante y pone flecha de desplazamiento */
+	overflow: auto;																/* Crece el tamaño del elemento en proporcion a su contenido y pone barra de desplazamiento si es necesario */
 	grid-template-columns: 1fr 20vw 20vw 20vw 1fr;								/* Crea 5 columnas dentro de la matriz con el tamaño especificado*/
-	grid-template-rows: 10vh 3rem 1rem auto 1rem 3rem 1rem auto 10vh 1fr 3rem;	/* Crea 11 filas dentro de la matriz con el tamaño especificado*/
+	grid-template-rows: 3rem 3rem 1rem auto 1rem 3rem 1rem auto 2rem 1fr auto;	/* Crea 11 filas dentro de la matriz con el tamaño especificado*/
 	grid-column-gap: 1rem;														/* Espacio entre cada columna */
 	grid-template-areas:														/* Nombra cada area de la matriz igual al elemento HTML */
 		". . . . ."
 		". text text text ."
 		". . . . ."
-		". header choice choice ."
+		". header header offsetnumber ."
 		". . . . ."
 		". reset ciphersubmit deciphersubmit ."
 		". . . . ."
@@ -46,9 +45,9 @@ body {
 #header {
 	grid-area: header;														/* Indica en que grid area aparece el elemento */
 	display: flex;															/* Tipo de display flex para mejor acomodo */
-	padding: 1rem 0rem 1rem 1rem;											/* Padding */
+	padding: 1rem 0rem 1rem 1rem;															/* Padding */
 	align-items: center;													/* Alinea los elementos al centro */
-	justify-content: flex-end;												/* Alinea el texto hasta arriba del elem*/
+	justify-content: flex-end;												/* Alinea el texto hacia la derecha del elemento*/
 	overflow-wrap: break-word;												/* Indica que si el texto no cabe en contenedor, corte palabras para empezar en otra línea */
 	font-weight: 600;														/* Grosor de la fuente */
 	user-select: none;														/* Impide que el usuario pueda seleccionar el texto */
@@ -70,10 +69,9 @@ body {
 	color: rgba(255, 255, 255, 1);										  /* Color de texto blanco */
 }
 
-
 /* Estilo para selector de desplazamiento */
-#choice {
-	grid-area: choice;														/* Indica en que grid area aparece el elemento */
+#offsetnumber {
+	grid-area: offsetnumber;												/* Indica en que grid area aparece el elemento */
 	display: block;															/* Tipo de display bloque */
 	background-color: rgba(121, 116, 185, 1);							  /* Color de fondo de la caja de texto */
 	padding: 1rem;															/* Padding */
@@ -109,9 +107,8 @@ body {
 	background-color: rgb(223, 178, 170);								  /* Color de fondo de la caja de texto */
 }
 
-
 /* Estilo en común para botones */
-#reset, #ciphersubmit, #deciphersubmit {Ç
+#reset, #ciphersubmit, #deciphersubmit {
 	display: flex;															/* Tipo de display flex para mejor acomodo */
 	align-items: center;													/* Alinea los elementos al centro */
 	justify-content: center;												/* Justifica el texto centrandolo */
@@ -121,8 +118,6 @@ body {
 	user-select: none;														/* Impide que el usuario pueda seleccionar el texto */
 }
 
-
-
 /* Estilo para elemento footer */
 #footer {
 	grid-area: footer;														/* Indica en que grid area aparece el elemento */
@@ -130,7 +125,7 @@ body {
 	background-color: rgb(102, 97, 175);								  /* Color de fondo de la caja de texto */
 	align-items: center;													/* Alinea los elementos al centro */
 	justify-content: center;												/* Justifica el texto centrandolo */
+	text-align: center;														/* Centra el texto en el elemento */
 	padding: 1rem;															/* Padding */
 	font-style: bold;														/* Texto aparece en negritas */
 }
-
