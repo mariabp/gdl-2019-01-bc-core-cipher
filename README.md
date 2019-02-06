@@ -1,49 +1,25 @@
-# Cifrado César
+# Crea tu Mensaje Secreto!
 
+#¿Para quién es Crea tu Mensaje Secreto! ?
+Esta página esta creada para niños y/o adolescentes entre 8 y 16 años de edad,
+aunque en realidad cualquier persona que necesite cifrar y descifrar por
+desplazamiento, puede beneficiarse de la página. 
 
+# ¿Por qué existe "Crea tu Mensaje Secreto! ?
 
+La __privacidad__ forma parte de la Declaración Universal de los Derechos Humanos,
+es decir, es inherente a cada ser humano, incluídos __niños y adolescentes__.
+Por lo que esta página es una herramienta para fomentar la privacidad entre 
+jovenes que tienen acceso a alguna computadora, tablet o celular 
+y que desean comunicar algun mensaje de manera privada con sus amigos, o para 
+guardar ideas, secretos o confidencias de manera confidencial.
 
+#¿Cómo funciona Crea tu Mensaje Secreto! ?
+Ingresa un texto sin límite de caractéres, con mayúsculas o minúsculas, en el 
+espacio correspondiente. 
+Elige el número de desplazamiento y presiona el botón Cifrar para codificar tu
+mensaje, y Descifrar para decodificar.
+Después de seleccionar la acción, aparecerá el resultado en la caja de texto correspondiente.
 
-
-
-
-### Definición del producto
-
-En el README.md, cuéntanos cómo pensaste en los usuarios y cuál fue tu proceso
-para definir el producto final a nivel de experiencia y de interfaz.
-
-* Quiénes son los principales usuarios de producto.
-* Cuáles son los objetivos de estos usuarios en relación con tu producto.
-* Cómo crees que el producto que estás creando está resolviendo sus problemas.
-
-## Checklist
-
-Esta sección está para ayudarte a llevar un control de lo que vas completando.
-
-### Parte Obligatoria
-
-* [ ] `README.md` incluye info sobre proceso y decisiones de diseño.
-* [ ] `README.md` explica claramente quiénes son los usuarios y su relación con
-  el producto.
-* [ ] `README.md` explica claramente cómo el producto soluciona los
-  problemas/necesidades de los usuarios.
-* [ ] Usa VanillaJS.
-* [ ] No utiliza `this`.
-* [ ] Implementa `cipher.encode`.
-* [ ] Implementa `cipher.decode`.
-* [ ] Pasa linter con configuración provista.
-* [ ] Pasa pruebas unitarias.
-* [ ] Pruebas unitarias cubren 70% de _statements_, _functions_ y _lines_, y un
-  mínimo del 50% de _branches_.
-* [ ] Interfaz permite elegir el `offset` o _desplazamiento_ a usar en el
-  cifrado/descifrado.
-* [ ] Interfaz permite escribir un texto para ser cifrado.
-* [ ] Interfaz muestra el resultado del cifrado correctamente.
-* [ ] Interfaz permite escribir un texto para ser descifrado.
-* [ ] Interfaz muestra el resultado del descifrado correctamente.
-
-### Parte Opcional: "Hacker edition"
-
-* [ ] Cifra/descifra minúsculas
-* [ ] Cifra/descifra _otros_ caracteres (espacios, puntuación, `ñ`, `á`, ...)
-* [ ] Permite usar un `offset` negativo.
+*Es importante que recuerdes el número de desplazamiento que elegiste al cifrar, y utilices el
+mismo número cuando quieras descifrar tu mensaje.*
