@@ -17,7 +17,7 @@ resetButton.addEventListener('click', resetForm);// Botón Reset
 
 validateForm es la función llamada al dar click en el botón de cifrar o descifrar.
 
-Su función es validar el texto ingresado; Si el número de caracteres es menor que uno,
+Su trabajo es validar el texto ingresado; Si el número de caracteres es menor que uno,
 cambia su placeholder a una advertencia así como el color de su fondo a rojo, y por último, 
 vuelve a dejar vacío el valor del campo donde se ingresa el texto.
 

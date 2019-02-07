@@ -31,7 +31,7 @@ body {
 		". . . . ."
 		". text text text ."
 		". . . . ."
-		". header header offsetnumber ."
+		". description description offsetnumber ."
 		". . . . ."
 		". reset ciphersubmit deciphersubmit ."
 		". . . . ."
@@ -41,9 +41,9 @@ body {
 		"footer footer footer footer footer";
 }
 
-/* Estilo para div header */
-#header {
-	grid-area: header;														/* Indica en que grid area aparece el elemento */
+/* Estilo para div description que es el texto del offset */
+#description {
+	grid-area: description;														/* Indica en que grid area aparece el elemento */
 	display: flex;															/* Tipo de display flex para mejor acomodo */
 	padding: 1rem 0rem 1rem 1rem;															/* Padding */
 	align-items: center;													/* Alinea los elementos al centro */
