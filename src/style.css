@@ -78,7 +78,7 @@ body {
 /* Estilo para botones de llaves */
 .keys {
 	display: block;															/* Tipo de display bloque */
-	background-color: rgb(158, 154, 216);
+	background-color: rgb(149, 145, 201);
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;

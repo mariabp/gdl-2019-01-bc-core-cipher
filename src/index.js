@@ -27,19 +27,27 @@ cipher.decode o cipher.encode dependiendo del botón al cual se le dio el click.
 
 */
 
-let offset = 15;
+let offset = 0;
 
 function validateForm(event) {
 
 	let string = stringId.value;
 
+	if (offset === 0) {
+		cipheredText.innerHTML = 'Es necesario que elijas un tipo de cifrado (círculo, cuadro o estrella).';
+		cipheredText.style.backgroundColor = "rgb(248, 126, 126)";
+		return;
+	}
+
 	if (string.length < 1) {	
 		stringId.placeholder = "¡Es necesario que escribas algo!";
 		stringId.style.backgroundColor = "rgb(248, 126, 126)";
 		stringId.value = "";
+
 	} else if (event.target === cipherSubmit) {
 		stringId.style.backgroundColor = "rgba(121, 116, 185, 1)";
 		cipheredText.innerHTML = cipher.encode(offset, string);
+
 	} else {
 		stringId.style.backgroundColor = "rgba(121, 116, 185, 1)";
 		cipheredText.innerHTML = cipher.decode(offset, string);
@@ -50,7 +58,8 @@ function validateForm(event) {
 const setOffsetTo = (event) => {
 
 	let eventId = event.currentTarget.id;
-
+	cipheredText.style.backgroundColor = "rgb(158, 154, 216)";
+	cipheredText.innerHTML = "Aquí aparecerá tu resultado...";
 	
 	if (eventId === "circle") {
 		offset = 15;
@@ -69,11 +78,12 @@ const setOffsetTo = (event) => {
 
 	keys.forEach((element) => {
 		
+		element.style.backgroundColor = "rgb(149, 145, 201)";
 		element.style.boxShadow = "inset 0px 0px 0px 0px rgba(0, 0, 0, 0)";
 
 	});
 
-
+	eventIdDiv.style.backgroundColor = "rgb(128, 124, 184)";
 	eventIdDiv.style.boxShadow = "inset 0px 0px 4px 2px rgba(0, 0, 0, 0.5)";
 
 };
@@ -101,19 +111,21 @@ al color inicial para que se vea como recién cargada.
 
 function resetForm() {
 
+	offset = 0;
 	stringId.value = "";
 	stringId.placeholder = "Escribe aquí lo que quieras cifrar o descifrar...";
 	cipheredText.innerHTML = "Aquí aparecerá tu resultado...";
+	cipheredText.style.backgroundColor = "rgb(158, 154, 216)";
 	stringId.style.backgroundColor = "rgba(121, 116, 185, 1)";
-
+	
 	keys.forEach((element) => {
 		
+		element.style.backgroundColor = "rgb(149, 145, 201)";
 		element.style.boxShadow = "inset 0px 0px 0px 0px rgba(0, 0, 0, 0)";
 
 	});
 
 }
-
 
 cipherSubmit.addEventListener('click', validateForm);// Botón Cifrar
 decipherSubmit.addEventListener('click', validateForm);// Botón Descifrar
