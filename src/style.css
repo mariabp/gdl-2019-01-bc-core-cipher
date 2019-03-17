@@ -7,6 +7,7 @@
 	font-family: 'Work Sans', sans-serif;										/* Tipo de letra */
 	font-size: 16pt;															/* Tamaño de letra */
 	font-weight: 600;															/* Grosor letra */
+	border-radius: 0.15rem;
 }
 
 /* Estilo predeterminado para elemento body */
@@ -25,13 +26,13 @@ body {
 	width: 100vw;																/* Ancho al 100 del tamaño de pantalla */
 	overflow: auto;																/* Crece el tamaño del elemento en proporcion a su contenido y pone barra de desplazamiento si es necesario */
 	grid-template-columns: 1fr 20vw 20vw 20vw 1fr;								/* Crea 5 columnas dentro de la matriz con el tamaño especificado*/
-	grid-template-rows: 3rem 3rem 1rem auto 1rem 3rem 1rem auto 2rem 1fr auto;	/* Crea 11 filas dentro de la matriz con el tamaño especificado*/
+	grid-template-rows: 3rem 3rem 1rem 3rem 1rem 3rem 1rem auto 2rem 1fr auto;	/* Crea 11 filas dentro de la matriz con el tamaño especificado*/
 	grid-column-gap: 1rem;														/* Espacio entre cada columna */
 	grid-template-areas:														/* Nombra cada area de la matriz igual al elemento HTML */
 		". . . . ."
 		". text text text ."
 		". . . . ."
-		". description description offsetnumber ."
+		". circle square star ."
 		". . . . ."
 		". reset ciphersubmit deciphersubmit ."
 		". . . . ."
@@ -39,18 +40,6 @@ body {
 		". . . . ."
 		". . . . ."
 		"footer footer footer footer footer";
-}
-
-/* Estilo para div description que es el texto del offset */
-#description {
-	grid-area: description;														/* Indica en que grid area aparece el elemento */
-	display: flex;															/* Tipo de display flex para mejor acomodo */
-	padding: 1rem 0rem 1rem 1rem;															/* Padding */
-	align-items: center;													/* Alinea los elementos al centro */
-	justify-content: flex-end;												/* Alinea el texto hacia la derecha del elemento*/
-	overflow-wrap: break-word;												/* Indica que si el texto no cabe en contenedor, corte palabras para empezar en otra línea */
-	font-weight: 600;														/* Grosor de la fuente */
-	user-select: none;														/* Impide que el usuario pueda seleccionar el texto */
 }
 
 /* Estilo para input donde usuario ingresa texto */
@@ -69,14 +58,30 @@ body {
 	color: rgba(255, 255, 255, 1);										  /* Color de texto blanco */
 }
 
-/* Estilo para selector de desplazamiento */
-#offsetnumber {
-	grid-area: offsetnumber;												/* Indica en que grid area aparece el elemento */
+#circle {
+	grid-area: circle;
+	display: flex;
+
+}
+
+#square {
+	grid-area: square;
+	display: flex;
+
+}
+
+#star {
+	grid-area: star;
+	display: flex;
+
+}
+/* Estilo para botones de llaves */
+.keys {
 	display: block;															/* Tipo de display bloque */
-	background-color: rgba(121, 116, 185, 1);							  /* Color de fondo de la caja de texto */
-	padding: 1rem;															/* Padding */
-	text-align: center;														/* Centra el texto en el elemento */
-	overflow-wrap: break-word;												/* Indica que si el texto no cabe en contenedor, corte palabras para empezar en otra línea */
+	background-color: rgb(158, 154, 216);
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
 	border: solid 1px;														/* Estilo del borde */
 }
 

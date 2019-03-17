@@ -4,14 +4,14 @@ let cipherSubmit = document.querySelector('#ciphersubmit'); // Llamo al elemento
 let decipherSubmit = document.querySelector('#deciphersubmit');// Llamo al elemento del botón DESCIFRAR en el HTML
 let resetButton = document.querySelector('#reset');// Llamo al elemento del botón RESET en el HTML
 
-let offsetId = document.querySelector('#offsetnumber');// Llamo al elemento del HTML donde el usuario elige desplazamiento
-let stringId = document.querySelector('#text');// Llamo al elemento del HTML donde el usuario ingresa texto
+const circleButton = document.querySelector('#circle');
+const squareButton = document.querySelector('#square');
+const starButton = document.querySelector('#star');
+const keys = document.querySelectorAll('.keys');
 
 let cipheredText = document.querySelector('#cipheredtext');// Llamo al elemento donde aparece el resultado esperado en el HTML
 
-cipherSubmit.addEventListener('click', validateForm);// Botón Cifrar
-decipherSubmit.addEventListener('click', validateForm);// Botón Descifrar
-resetButton.addEventListener('click', resetForm);// Botón Reset
+let stringId = document.querySelector('#text');// Llamo al elemento del HTML donde el usuario ingresa texto
 
 /*
 
@@ -27,9 +27,10 @@ cipher.decode o cipher.encode dependiendo del botón al cual se le dio el click.
 
 */
 
+let offset = 15;
+
 function validateForm(event) {
 
-	let offset = offsetId.value;
 	let string = stringId.value;
 
 	if (string.length < 1) {	
@@ -45,6 +46,37 @@ function validateForm(event) {
 	}
 
 }
+
+const setOffsetTo = (event) => {
+
+	let eventId = event.currentTarget.id;
+
+	
+	if (eventId === "circle") {
+		offset = 15;
+	}
+
+	if (eventId === "square") {
+		offset = 20;
+	}
+	
+	if (eventId === "star") {
+		offset = 25;
+	}
+
+
+	let eventIdDiv = document.querySelector(`#${eventId}`);
+
+	keys.forEach((element) => {
+		
+		element.style.boxShadow = "inset 0px 0px 0px 0px rgba(0, 0, 0, 0)";
+
+	});
+
+
+	eventIdDiv.style.boxShadow = "inset 0px 0px 4px 2px rgba(0, 0, 0, 0.5)";
+
+};
 
 /*
 
@@ -68,10 +100,25 @@ al color inicial para que se vea como recién cargada.
 */
 
 function resetForm() {
-	offsetId.value = 1;
+
 	stringId.value = "";
 	stringId.placeholder = "Escribe aquí lo que quieras cifrar o descifrar...";
 	cipheredText.innerHTML = "Aquí aparecerá tu resultado...";
 	stringId.style.backgroundColor = "rgba(121, 116, 185, 1)";
-	offsetId.style.backgroundColor = "rgba(121, 116, 185, 1)";
+
+	keys.forEach((element) => {
+		
+		element.style.boxShadow = "inset 0px 0px 0px 0px rgba(0, 0, 0, 0)";
+
+	});
+
 }
+
+
+cipherSubmit.addEventListener('click', validateForm);// Botón Cifrar
+decipherSubmit.addEventListener('click', validateForm);// Botón Descifrar
+resetButton.addEventListener('click', resetForm);// Botón Reset
+
+circleButton.addEventListener('click', setOffsetTo);
+squareButton.addEventListener('click', setOffsetTo);
+starButton.addEventListener('click', setOffsetTo);
